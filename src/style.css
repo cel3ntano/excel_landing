@@ -52,8 +52,9 @@
   --color-placeholder: #767b8e;
   --color-link: #3577f7;
   --color-link-hover: rgb(108, 154, 244);
-  --color-background: #e7e7e7;
+  --color-background: #f1f1f1;
   --color-error: #e63946;
+  --color-grid: #e7e7e7;
 
   --space-xs: 0.25rem; /* 4px */
   --space-sm: 0.5rem; /* 8px */
@@ -67,6 +68,7 @@
 html {
   font-size: 16px;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 body {
@@ -77,6 +79,7 @@ body {
   min-height: 100vh;
   width: 100%;
   margin: 0;
+  overflow-x: hidden;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -156,14 +159,209 @@ select:focus {
 }
 
 .container {
+  outline: 1px solid aqua;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 20px;
+
+  @media (min-width: 768px) {
+    padding: 0 32px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 0 112px;
+  }
 }
 
 @media (max-width: 767px) {
 }
 
 @media (min-width: 768px) {
+  .container {
+    padding: 0 112px;
+  }
+}
+
+.logo {
+  width: 100px;
+  height: 30px;
+}
+
+.header {
+  outline: 2px solid orange;
+  position: relative;
+  margin-top: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 25px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-top: 48px;
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.excel-formula {
+  color: var(--color-tertiary);
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-style: italic;
+  transform: rotate(16.455deg);
+  position: absolute;
+  line-height: 1.4;
+  top: 133px;
+  right: -50px;
+
+  @media (min-width: 768px) {
+    display: block;
+    font-weight: 700;
+    left: 146px;
+    top: 0px;
+    right: auto;
+  }
+
+  @media (min-width: 1200px) {
+    font-weight: 500;
+    left: 435px;
+    top: 0px;
+  }
+}
+
+.excel-formula-right {
+  color: var(--color-secondary);
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-style: normal;
+  line-height: 1.4;
+  position: absolute;
+  right: -112px;
+  top: 0;
+
+  @media (min-width: 768px) {
+    font-weight: 700;
+    right: -150px;
+  }
+
+  @media (min-width: 1200px) {
+    font-weight: 400;
+  }
+}
+
+/* GRID */
+
+.grid-background {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.grid-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 268px;
+  width: 1px;
+  height: 100%;
+  background-color: var(--color-grid);
+}
+
+.grid-background::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 233px;
+  width: calc(100% - 233px);
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 36px,
+    var(--color-grid),
+    var(--color-grid) 36px,
+    var(--color-grid),
+    var(--color-grid) 37px
+  );
+}
+
+@media (min-width: 768px) {
+  .grid-background::before {
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    background-image: linear-gradient(
+        to bottom,
+        var(--color-grid),
+        var(--color-grid)
+      ),
+      linear-gradient(to bottom, var(--color-grid), var(--color-grid)),
+      linear-gradient(to bottom, var(--color-grid), var(--color-grid)),
+      linear-gradient(to bottom, var(--color-grid), var(--color-grid));
+    background-position: 402px 0, 502px 0, 602px 0, 702px 0;
+    background-size: 1px 100%, 1px 100%, 1px 100%, 1px 100%;
+    background-repeat: no-repeat;
+  }
+
+  .grid-background::after {
+    top: 25px;
+    left: 366px;
+    width: calc(100% - 366px);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 34px,
+      var(--color-grid),
+      var(--color-grid) 34px,
+      var(--color-grid),
+      var(--color-grid) 35px
+    );
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-background::before {
+    background-image: linear-gradient(
+        to bottom,
+        var(--color-grid),
+        var(--color-grid)
+      ),
+      linear-gradient(to bottom, var(--color-grid), var(--color-grid)),
+      linear-gradient(to bottom, var(--color-grid), var(--color-grid)),
+      linear-gradient(to bottom, var(--color-grid), var(--color-grid)),
+      linear-gradient(to bottom, var(--color-grid), var(--color-grid)),
+      linear-gradient(to bottom, var(--color-grid), var(--color-grid));
+    background-position: 775px 0, 893px 0, 1011px 0, 1129px 0, 1247px 0,
+      1365px 0;
+    background-size: 1px 100%, 1px 100%, 1px 100%, 1px 100%, 1px 100%, 1px 100%;
+  }
+
+  .grid-background::after {
+    top: 41px;
+    left: 737px;
+    width: calc(100% - 737px);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 39px,
+      var(--color-grid),
+      var(--color-grid) 39px,
+      var(--color-grid),
+      var(--color-grid) 40px
+    );
+  }
 }

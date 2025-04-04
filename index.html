@@ -7,7 +7,16 @@
     <title>Опануйте Microsoft Excel</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="grid-background"></div>
+    <div class="container">
+      <header class="header">
+        <svg class="logo">
+          <use href="/sprite.svg#logo"></use>
+        </svg>
+        <div class="excel-formula">f(x) = MIN(E2:E5)</div>
+        <div class="excel-formula-right">SUMIF(C3:C12,''>70,000'')</div>
+      </header>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
