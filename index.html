@@ -17,43 +17,59 @@
           <div class="excel-formula">f(x) = MIN(E2:E5)</div>
           <div class="excel-formula-right">SUMIF(C3:C12,''>70,000'')</div>
         </header>
-        <main>
-          <div class="webinar-chip-container">
-            <div class="free-webinar-chip">
-              <div class="dot dot-top-left"></div>
-              <div class="dot dot-bottom-left"></div>
-              <div class="dot dot-top-right"></div>
-              <div class="dot dot-bottom-right"></div>
-              <span class="free-webinar-text">Безоплатний вебінар</span>
+        <main class="main">
+          <section class="hero">
+            <div class="webinar-chip-container">
+              <div class="free-webinar-chip">
+                <div class="dot dot-top-left"></div>
+                <div class="dot dot-bottom-left"></div>
+                <div class="dot dot-top-right"></div>
+                <div class="dot dot-bottom-right"></div>
+                <span class="free-webinar-text">Безоплатний вебінар</span>
+              </div>
+              <div class="free-webinar-date">
+                <div class="dot dot-top-left"></div>
+                <div class="dot dot-bottom-left"></div>
+                <div class="dot dot-top-right"></div>
+                <div class="dot dot-bottom-right"></div>
+                <span class="free-webinar-text"
+                  >Старт: <strong>10 травня 19:30</strong></span
+                >
+              </div>
             </div>
-            <div class="free-webinar-date">
-              <div class="dot dot-top-left"></div>
-              <div class="dot dot-bottom-left"></div>
-              <div class="dot dot-top-right"></div>
-              <div class="dot dot-bottom-right"></div>
-              <span class="free-webinar-text"
-                >Старт: <strong>10 травня 19:30</strong></span
-              >
+
+            <div class="main-text-block">
+              <h1 class="main-heading">
+                Навчіться створювати Excel-таблиці на pro-рівні
+              </h1>
+              <div class="description-container">
+                <p class="main-description">
+                  Опануйте функціонал Microsoft Excel, автоматизуйте свою роботу
+                  та створюйте таблиці швидко і в задоволення
+                </p>
+                <div class="arrow-up-container">
+                  <svg
+                    width="83"
+                    height="83"
+                    class="arrow-up-icon"
+                    aria-label="Arrow Up"
+                  >
+                    <use href="/sprite.svg#arrow_up"></use>
+                  </svg>
+                </div>
+                <div width="40" height="40" class="arrow-down-container">
+                  <svg class="arrow-down-icon" aria-label="Arrow Up">
+                    <use href="/sprite.svg#arrow_down"></use>
+                  </svg>
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
 
-          <div class="main-text-block">
-            <h1 class="main-heading">
-              Навчіться створювати Excel-таблиці на pro-рівні
-            </h1>
-            <p class="main-description">
-              Опануйте функціонал Microsoft Excel, автоматизуйте свою роботу та
-              створюйте таблиці швидко і в задоволення
-            </p>
-          </div>
-
-          <!-- Registration Section -->
           <section class="registration-section">
-            <!-- Desktop Form -->
             <div class="form-container">
               <h2 class="form-heading">Реєструйся просто зараз</h2>
 
-              <!-- Timer -->
               <div class="timer-container">
                 <div class="timer">
                   <div class="timer-block">
@@ -80,7 +96,6 @@
                 </div>
               </div>
 
-              <!-- Form -->
               <form id="registration-form" class="registration-form" novalidate>
                 <div class="form-field">
                   <input
@@ -106,7 +121,7 @@
 
                 <div class="form-field phone-field">
                   <div class="phone-input-wrapper">
-                    <svg class="flag-icon">
+                    <svg width="24" height="16" class="flag-icon">
                       <use href="/sprite.svg#flag"></use>
                     </svg>
                     <input
@@ -124,7 +139,7 @@
                   <label class="checkbox-container">
                     <input type="checkbox" id="terms" name="terms" required />
                     <span class="custom-checkbox">
-                      <svg class="checkbox-icon">
+                      <svg width="12" height="12" class="checkbox-icon">
                         <use href="/sprite.svg#checkbox"></use>
                       </svg>
                     </span>
@@ -146,13 +161,12 @@
                   Зареєструватися
                 </button>
               </form>
+              <div class="form-bg-anchor"></div>
             </div>
 
-            <!-- Mobile Card -->
             <div class="mobile-card">
               <h2 class="form-heading">Реєструйся просто зараз</h2>
 
-              <!-- Timer -->
               <div class="timer-container">
                 <div class="timer">
                   <div class="timer-block">
@@ -180,12 +194,12 @@
               </div>
 
               <button class="sign-up-button">Зареєструватися</button>
+              <div class="mobile-bg-anchor"></div>
             </div>
           </section>
         </main>
       </div>
 
-      <!-- Modal for Mobile -->
       <div class="modal" id="registration-modal">
         <div class="modal-content">
           <div class="modal-header">
@@ -202,6 +216,34 @@
           </div>
           <div class="modal-body"></div>
         </div>
+      </div>
+
+      <div class="container bottom-formulas-wrapper">
+        <div class="bottom-formula-left">
+          <span class="equals-sign">
+            <svg width="15" height="5" class="equals-icon">
+              <use href="/sprite.svg#equals_1"></use>
+            </svg>
+            <svg width="15" height="5" class="equals-icon">
+              <use href="/sprite.svg#equals_2"></use>
+            </svg>
+          </span>
+          <span class="parenthesis">
+            <svg width="9" height="37" class="parenthesis-icon">
+              <use href="/sprite.svg#parenthesis_left"></use>
+            </svg>
+          </span>
+          <span>A2*B2</span>
+          <span class="parenthesis">
+            <svg width="9" height="37" class="parenthesis-icon">
+              <use href="/sprite.svg#parenthesis_right"></use>
+            </svg>
+          </span>
+        </div>
+
+        <div class="bottom-formula-center">AVERAGE(B2+D2)</div>
+
+        <div class="bottom-formula-right">SUM(A1+B4)</div>
       </div>
     </div>
 
