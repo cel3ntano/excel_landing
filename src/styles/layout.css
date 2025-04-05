@@ -1,0 +1,365 @@
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 0 112px;
+    max-width: 1440px;
+  }
+}
+
+.grid-background {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.grid-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: 268px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-grid),
+    var(--color-grid) 1px,
+    transparent 1px,
+    transparent 96px
+  );
+}
+
+.grid-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 230px;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-grid),
+    var(--color-grid) 1px,
+    transparent 1px,
+    transparent 36px
+  );
+}
+
+@media (min-width: 768px) {
+  .grid-background::before {
+    left: 402px;
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--color-grid),
+      var(--color-grid) 1px,
+      transparent 1px,
+      transparent 100px
+    );
+  }
+
+  .grid-background::after {
+    top: 0;
+    left: 366px;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      var(--color-grid),
+      var(--color-grid) 1px,
+      transparent 1px,
+      transparent 34px
+    );
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-background::before {
+    left: 775px;
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--color-grid),
+      var(--color-grid) 1px,
+      transparent 1px,
+      transparent 118px
+    );
+  }
+
+  .grid-background::after {
+    top: 0;
+    left: 737px;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      var(--color-grid),
+      var(--color-grid) 1px,
+      transparent 1px,
+      transparent 39px
+    );
+  }
+}
+
+.header {
+  position: relative;
+  margin-top: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 25px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-top: 48px;
+  }
+}
+
+.main {
+  display: block;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    gap: 104px;
+  }
+}
+
+.logo {
+  width: 100px;
+  height: 30px;
+}
+
+.excel-formula {
+  text-transform: uppercase;
+  color: var(--color-tertiary);
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-style: italic;
+  transform: rotate(16.455deg);
+  position: absolute;
+  line-height: 1.4;
+  font-size: 14px;
+  top: 133px;
+  right: -50px;
+
+  @media (min-width: 768px) {
+    display: block;
+    font-weight: 700;
+    left: 146px;
+    top: 0px;
+    right: auto;
+    font-size: 20px;
+  }
+
+  @media (min-width: 1200px) {
+    font-weight: 500;
+    left: 435px;
+    top: 0px;
+  }
+}
+
+.excel-formula-right {
+  color: var(--color-secondary);
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-style: normal;
+  text-transform: uppercase;
+  line-height: 1.4;
+  font-size: 14px;
+  position: absolute;
+  left: 73%;
+  top: 0;
+
+  @media (min-width: 768px) {
+    font-weight: 700;
+    font-size: 20px;
+    left: 530px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: var(--color-primary);
+      top: 180px;
+      left: 67%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    font-weight: 400;
+    left: 88%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: var(--color-primary);
+      top: 140px;
+      left: 160px;
+    }
+
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: var(--color-primary);
+      top: 280px;
+      left: 200px;
+    }
+  }
+}
+
+.bottom-formulas-wrapper {
+  height: 20px;
+  position: relative;
+  color: var(--color-secondary);
+  fill: var(--color-secondary);
+}
+
+.bottom-formula-left {
+  display: none;
+  font-size: 24px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  transform: rotate(15deg);
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.equals-sign {
+  display: flex;
+  flex-direction: column;
+}
+
+.equals-icon {
+  width: 15px;
+  height: 5px;
+  stroke: var(--color-secondary);
+}
+
+.parenthesis-icon {
+  width: 9px;
+  height: 37px;
+  stroke: var(--color-secondary);
+}
+
+.bottom-formula-center {
+  color: var(--color-tertiary);
+  font-size: 12px;
+  position: absolute;
+  top: -430px;
+  right: 0;
+  text-transform: uppercase;
+  transform: rotate(-30deg);
+
+  &::before {
+    content: '';
+    position: absolute;
+    transform: rotate(30deg);
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-primary);
+    right: 30px;
+    bottom: 30px;
+  }
+
+  @media screen and (min-width: 768px) {
+    top: 0;
+    right: auto;
+    left: -20px;
+    font-size: 20px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    left: 350px;
+    top: -30px;
+    font-size: 24px;
+  }
+}
+
+.bottom-formula-right {
+  color: var(--color-tertiary);
+  font-style: italic;
+  font-size: 14px;
+  position: absolute;
+  top: 20px;
+  text-transform: uppercase;
+  transform: rotate(16deg);
+  z-index: -1;
+
+  @media screen and (min-width: 768px) {
+    left: 230px;
+    top: 0;
+    font-size: 16px;
+
+    &::before {
+      transform: rotate(-16deg);
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: var(--color-primary);
+      left: 0;
+      top: 80px;
+    }
+
+    &::after {
+      transform: rotate(-16deg);
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: var(--color-primary);
+      top: -50px;
+      left: 70px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 20px;
+    right: auto;
+    top: 10px;
+    left: 45%;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: var(--color-primary);
+      left: auto;
+      top: -10px;
+      right: -120px;
+    }
+  }
+}

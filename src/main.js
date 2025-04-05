@@ -1,4 +1,4 @@
-import './style.css';
-import initRegistrationForm from './form';
+import './styles/index.css';
+import initRegistrationForm from './js/init.js';
 
 document.addEventListener('DOMContentLoaded', initRegistrationForm);

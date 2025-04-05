@@ -1,0 +1,370 @@
+.form-container {
+  margin-top: 40px;
+  max-width: 360px;
+  display: none;
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 22px;
+    display: block;
+    background: #fff;
+    box-shadow: 0px 0px 20px 0px rgba(15, 124, 65, 0.2);
+    padding: 32px 20px;
+    max-width: 336px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--color-primary);
+      bottom: -30px;
+      left: 50px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--color-primary);
+      bottom: 190px;
+      right: -36px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 488px;
+    padding: 52px;
+
+    &::after {
+      bottom: -28px;
+      left: 180px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--color-primary);
+      bottom: 260px;
+      right: -50px;
+    }
+  }
+}
+
+.registration-section {
+  margin-top: 40px;
+
+  @media screen and (min-width: 768px) {
+    flex-shrink: 0;
+    margin-top: 0;
+  }
+}
+
+.form-bg-anchor,
+.mobile-bg-anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-bg-anchor::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -30px;
+    background-image: image-set(
+      url('/image_mob.jpg') 1x,
+      url('/image_mob@2x.jpg') 2x
+    );
+    background-repeat: no-repeat;
+    background-size: 168px 129px;
+    width: 168px;
+    height: 129px;
+  }
+  .form-bg-anchor {
+    display: none;
+  }
+}
+
+.mobile-bg-anchor {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.form-bg-anchor {
+  @media screen and (min-width: 768px) {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      right: -40px;
+      background-image: image-set(
+        url('/image_tab.jpg') 1x,
+        url('/image_tab@2x.jpg') 2x
+      );
+      background-repeat: no-repeat;
+      background-size: 188px 144px;
+      width: 188px;
+      height: 144px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    &::after {
+      bottom: -110px;
+      right: -110px;
+      background-image: image-set(
+        url('/image_desktop.jpg') 1x,
+        url('/image_desktop@2x.jpg') 2x
+      );
+      background-size: 312px 240px;
+      width: 312px;
+      height: 240px;
+    }
+  }
+}
+
+.form-heading {
+  color: var(--color-text);
+  text-align: center;
+  font-family: var(--font-secondary);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.14;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 28px;
+  }
+}
+
+.registration-form {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field input[type='text'],
+.form-field input[type='email'],
+.form-field input[type='tel'] {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--color-input-mobile);
+  border: 1px solid transparent;
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text);
+
+  @media screen and (min-width: 1200px) {
+    background: var(--color-input);
+  }
+}
+
+.form-field input[type='tel'] {
+  padding-left: 48px;
+}
+
+.form-field input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.form-field input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.form-field.error input {
+  border-color: var(--color-error);
+}
+
+.phone-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-input-wrapper {
+  position: relative;
+}
+
+.flag-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 16px;
+}
+
+.checkbox-field {
+  margin-bottom: 32px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.checkbox-container input[type='checkbox'] {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.custom-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.checkbox-icon {
+  display: none;
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: var(--color-primary);
+}
+
+.checkbox-container
+  input[type='checkbox']:checked
+  ~ .custom-checkbox
+  .checkbox-icon {
+  display: block;
+}
+
+.terms-text {
+  margin-left: 8px;
+  color: var(--color-text);
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
+}
+
+.terms-link {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.terms-link:hover {
+  color: var(--color-link-hover);
+}
+
+.error-message {
+  color: var(--color-error);
+  font-size: 12px;
+  margin-top: 4px;
+  font-family: var(--font-secondary);
+}
+
+.register-button {
+  padding: 20px 24px;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  line-height: 1.5;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.register-button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.mobile-card {
+  display: block;
+  background: #fff;
+  box-shadow: 0px 0px 20px 0px rgba(15, 124, 65, 0.2);
+  padding: 32px 20px;
+  margin-top: 24px;
+  position: relative;
+}
+
+.mobile-card::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-primary);
+  bottom: -30px;
+  left: 70px;
+}
+
+.mobile-card::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-primary);
+  bottom: 120px;
+  left: -10px;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-card {
+    display: none;
+  }
+}
+
+.mobile-card .form-heading {
+  color: var(--color-text);
+  text-align: center;
+  font-family: var(--font-secondary);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.mobile-card .timer-container {
+  margin-top: 24px;
+}
+
+.sign-up-button {
+  display: block;
+  width: 100%;
+  padding: 20px 24px;
+  background: var(--color-primary);
+  color: #fff;
+  text-align: center;
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  border: none;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: background-color var(--transition-speed);
+}
+
+@media screen and (min-width: 768px) {
+  .sign-up-button {
+    display: none;
+  }
+}
+
+.sign-up-button:hover {
+  background-color: var(--color-primary-hover);
+}

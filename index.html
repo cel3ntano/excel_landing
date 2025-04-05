@@ -7,244 +7,247 @@
     <title>Опануйте Microsoft Excel</title>
   </head>
   <body>
-    <div class="page-wrapper">
-      <div class="grid-background"></div>
-      <div class="container">
-        <header class="header">
-          <svg width="100" height="30" class="logo" aria-label="Logo">
-            <use href="/sprite.svg#logo"></use>
-          </svg>
-          <div class="excel-formula">f(x) = MIN(E2:E5)</div>
-          <div class="excel-formula-right">SUMIF(C3:C12,''>70,000'')</div>
-        </header>
-        <main class="main">
-          <section class="hero">
-            <div class="webinar-chip-container">
-              <div class="free-webinar-chip">
-                <div class="dot dot-top-left"></div>
-                <div class="dot dot-bottom-left"></div>
-                <div class="dot dot-top-right"></div>
-                <div class="dot dot-bottom-right"></div>
-                <span class="free-webinar-text">Безоплатний вебінар</span>
-              </div>
-              <div class="free-webinar-date">
-                <div class="dot dot-top-left"></div>
-                <div class="dot dot-bottom-left"></div>
-                <div class="dot dot-top-right"></div>
-                <div class="dot dot-bottom-right"></div>
-                <span class="free-webinar-text"
-                  >Старт: <strong>10 травня 19:30</strong></span
-                >
-              </div>
+    <div class="grid-background"></div>
+    <div class="container">
+      <header class="header">
+        <svg width="100" height="30" class="logo" aria-label="Logo">
+          <use href="/sprite.svg#logo"></use>
+        </svg>
+        <div class="excel-formula">f(x) = MIN(E2:E5)</div>
+        <div class="excel-formula-right">SUMIF(C3:C12,''>70,000'')</div>
+      </header>
+      <main class="main">
+        <section class="hero">
+          <div class="webinar-chip-container">
+            <div class="free-webinar-chip">
+              <div class="dot dot-top-left"></div>
+              <div class="dot dot-bottom-left"></div>
+              <div class="dot dot-top-right"></div>
+              <div class="dot dot-bottom-right"></div>
+              <span class="free-webinar-text">Безоплатний вебінар</span>
             </div>
-
-            <div class="main-text-block">
-              <h1 class="main-heading">
-                Навчіться створювати Excel-таблиці на pro-рівні
-              </h1>
-              <div class="description-container">
-                <p class="main-description">
-                  Опануйте функціонал Microsoft Excel, автоматизуйте свою роботу
-                  та створюйте таблиці швидко і в задоволення
-                </p>
-                <div class="arrow-up-container">
-                  <svg
-                    width="83"
-                    height="83"
-                    class="arrow-up-icon"
-                    aria-label="Arrow Up"
-                  >
-                    <use href="/sprite.svg#arrow_up"></use>
-                  </svg>
-                </div>
-                <div width="40" height="40" class="arrow-down-container">
-                  <svg class="arrow-down-icon" aria-label="Arrow Up">
-                    <use href="/sprite.svg#arrow_down"></use>
-                  </svg>
-                </div>
-              </div>
+            <div class="free-webinar-date">
+              <div class="dot dot-top-left"></div>
+              <div class="dot dot-bottom-left"></div>
+              <div class="dot dot-top-right"></div>
+              <div class="dot dot-bottom-right"></div>
+              <span class="free-webinar-text"
+                >Старт: <strong>10 травня 19:30</strong></span
+              >
             </div>
-          </section>
-
-          <section class="registration-section">
-            <div class="form-container">
-              <h2 class="form-heading">Реєструйся просто зараз</h2>
-
-              <div class="timer-container">
-                <div class="timer">
-                  <div class="timer-block">
-                    <div class="timer-digits" id="days">00</div>
-                    <div class="timer-label">днів</div>
-                  </div>
-                  <div class="timer-separator">:</div>
-                  <div class="timer-block">
-                    <div class="timer-digits" id="hours">00</div>
-                    <div class="timer-label">годин</div>
-                  </div>
-                  <div class="timer-separator">:</div>
-                  <div class="timer-block">
-                    <div class="timer-digits" id="minutes">00</div>
-                    <div class="timer-label">хвилин</div>
-                  </div>
-                  <div class="timer-separator">:</div>
-                  <div class="timer-block">
-                    <div class="timer-digits timer-seconds" id="seconds">
-                      00
-                    </div>
-                    <div class="timer-label">секунд</div>
-                  </div>
-                </div>
-              </div>
-
-              <form id="registration-form" class="registration-form" novalidate>
-                <div class="form-field">
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Введи своє ім'я"
-                    required
-                  />
-                  <div class="error-message" id="name-error"></div>
-                </div>
-
-                <div class="form-field">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Введи свій E-mail"
-                    required
-                  />
-                  <div class="error-message" id="email-error"></div>
-                </div>
-
-                <div class="form-field phone-field">
-                  <div class="phone-input-wrapper">
-                    <svg width="24" height="16" class="flag-icon">
-                      <use href="/sprite.svg#flag"></use>
-                    </svg>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      placeholder="+380 95 -- -- ---"
-                      required
-                    />
-                  </div>
-                  <div class="error-message" id="phone-error"></div>
-                </div>
-
-                <div class="form-field checkbox-field">
-                  <label class="checkbox-container">
-                    <input type="checkbox" id="terms" name="terms" required />
-                    <span class="custom-checkbox">
-                      <svg width="12" height="12" class="checkbox-icon">
-                        <use href="/sprite.svg#checkbox"></use>
-                      </svg>
-                    </span>
-                    <span class="terms-text">
-                      Згоден з
-                      <a href="#" class="terms-link"
-                        >Політика конфеденційності</a
-                      >
-                      та
-                      <a href="#" class="terms-link"
-                        >Умови користування послугами</a
-                      >
-                    </span>
-                  </label>
-                  <div class="error-message" id="terms-error"></div>
-                </div>
-
-                <button type="submit" class="register-button">
-                  Зареєструватися
-                </button>
-              </form>
-              <div class="form-bg-anchor"></div>
-            </div>
-
-            <div class="mobile-card">
-              <h2 class="form-heading">Реєструйся просто зараз</h2>
-
-              <div class="timer-container">
-                <div class="timer">
-                  <div class="timer-block">
-                    <div class="timer-digits" id="mobile-days">00</div>
-                    <div class="timer-label">днів</div>
-                  </div>
-                  <div class="timer-separator">:</div>
-                  <div class="timer-block">
-                    <div class="timer-digits" id="mobile-hours">00</div>
-                    <div class="timer-label">годин</div>
-                  </div>
-                  <div class="timer-separator">:</div>
-                  <div class="timer-block">
-                    <div class="timer-digits" id="mobile-minutes">00</div>
-                    <div class="timer-label">хвилин</div>
-                  </div>
-                  <div class="timer-separator">:</div>
-                  <div class="timer-block">
-                    <div class="timer-digits timer-seconds" id="mobile-seconds">
-                      00
-                    </div>
-                    <div class="timer-label">секунд</div>
-                  </div>
-                </div>
-              </div>
-
-              <button class="sign-up-button">Зареєструватися</button>
-              <div class="mobile-bg-anchor"></div>
-            </div>
-          </section>
-        </main>
-      </div>
-
-      <div class="modal" id="registration-modal">
-        <div class="modal-content">
-          <div class="modal-header">
-            <span class="modal-logo">
-              <svg width="100" height="30" class="logo" aria-label="Logo">
-                <use href="/sprite.svg#logo"></use>
-              </svg>
-            </span>
-            <span class="close-modal">
-              <svg width="32" height="32" aria-label="Close">
-                <use href="/sprite.svg#close"></use>
-              </svg>
-            </span>
           </div>
-          <div class="modal-body"></div>
+
+          <div class="main-text-block">
+            <h1 class="main-heading">
+              Навчіться створювати Excel-таблиці на pro-рівні
+            </h1>
+            <div class="description-container">
+              <p class="main-description">
+                Опануйте функціонал Microsoft Excel, автоматизуйте свою роботу
+                та створюйте таблиці швидко і в задоволення
+              </p>
+              <div class="arrow-up-container">
+                <svg
+                  width="83"
+                  height="83"
+                  class="arrow-up-icon"
+                  aria-label="Arrow Up"
+                >
+                  <use href="/sprite.svg#arrow_up"></use>
+                </svg>
+              </div>
+              <div width="40" height="40" class="arrow-down-container">
+                <svg class="arrow-down-icon" aria-label="Arrow Up">
+                  <use href="/sprite.svg#arrow_down"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="registration-section">
+          <div class="form-container">
+            <h2 class="form-heading">Реєструйся просто зараз</h2>
+
+            <div class="timer-container">
+              <div class="timer">
+                <div class="timer-block">
+                  <div class="timer-digits" id="days">00</div>
+                  <div class="timer-label">днів</div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-block">
+                  <div class="timer-digits" id="hours">00</div>
+                  <div class="timer-label">годин</div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-block">
+                  <div class="timer-digits" id="minutes">00</div>
+                  <div class="timer-label">хвилин</div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-block">
+                  <div class="timer-digits timer-seconds" id="seconds">00</div>
+                  <div class="timer-label">секунд</div>
+                </div>
+              </div>
+            </div>
+
+            <form id="registration-form" class="registration-form" novalidate>
+              <div class="form-field">
+                <label for="name" class="visually-hidden">Ім'я</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Введи своє ім'я"
+                  required
+                />
+                <div class="error-message" id="name-error"></div>
+              </div>
+
+              <div class="form-field">
+                <label for="email" class="visually-hidden">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Введи свій E-mail"
+                  required
+                />
+                <div class="error-message" id="email-error"></div>
+              </div>
+
+              <div class="form-field phone-field">
+                <label for="phone" class="visually-hidden">Phone</label>
+                <div class="phone-input-wrapper">
+                  <svg width="24" height="16" class="flag-icon">
+                    <use href="/sprite.svg#flag"></use>
+                  </svg>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+380 95 -- -- ---"
+                    required
+                  />
+                </div>
+                <div class="error-message" id="phone-error"></div>
+              </div>
+
+              <div class="form-field checkbox-field">
+                <label class="checkbox-container">
+                  <input type="checkbox" id="terms" name="terms" required />
+                  <span class="custom-checkbox">
+                    <svg width="12" height="12" class="checkbox-icon">
+                      <use href="/sprite.svg#checkbox"></use>
+                    </svg>
+                  </span>
+                  <span class="terms-text">
+                    Згоден з
+                    <a href="#" class="terms-link">Політика конфеденційності</a>
+                    та
+                    <a href="#" class="terms-link"
+                      >Умови користування послугами</a
+                    >
+                  </span>
+                </label>
+                <div class="error-message" id="terms-error"></div>
+              </div>
+
+              <button type="submit" class="register-button">
+                Зареєструватися
+              </button>
+            </form>
+            <div class="form-bg-anchor"></div>
+          </div>
+
+          <div class="mobile-card">
+            <h2 class="form-heading">Реєструйся просто зараз</h2>
+
+            <div class="timer-container">
+              <div class="timer">
+                <div class="timer-block">
+                  <div class="timer-digits" id="mobile-days">00</div>
+                  <div class="timer-label">днів</div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-block">
+                  <div class="timer-digits" id="mobile-hours">00</div>
+                  <div class="timer-label">годин</div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-block">
+                  <div class="timer-digits" id="mobile-minutes">00</div>
+                  <div class="timer-label">хвилин</div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-block">
+                  <div class="timer-digits timer-seconds" id="mobile-seconds">
+                    00
+                  </div>
+                  <div class="timer-label">секунд</div>
+                </div>
+              </div>
+            </div>
+
+            <button class="sign-up-button">Зареєструватися</button>
+            <div class="mobile-bg-anchor"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div
+      class="modal"
+      id="registration-modal"
+      role="dialog"
+      aria-labelledby="modal-title"
+      aria-modal="true"
+    >
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-logo">
+            <svg width="100" height="30" class="logo" aria-label="Logo">
+              <use href="/sprite.svg#logo"></use>
+            </svg>
+          </span>
+          <button type="button" class="close-modal" aria-label="Close modal">
+            <svg width="32" height="32" aria-hidden="true">
+              <use href="/sprite.svg#close"></use>
+            </svg>
+          </button>
         </div>
+        <div class="modal-body"></div>
+      </div>
+    </div>
+
+    <div class="container bottom-formulas-wrapper">
+      <div class="bottom-formula-left">
+        <span class="equals-sign">
+          <svg width="15" height="5" class="equals-icon">
+            <use href="/sprite.svg#equals_1"></use>
+          </svg>
+          <svg width="15" height="5" class="equals-icon">
+            <use href="/sprite.svg#equals_2"></use>
+          </svg>
+        </span>
+        <span class="parenthesis">
+          <svg width="9" height="37" class="parenthesis-icon">
+            <use href="/sprite.svg#parenthesis_left"></use>
+          </svg>
+        </span>
+        <span>A2*B2</span>
+        <span class="parenthesis">
+          <svg width="9" height="37" class="parenthesis-icon">
+            <use href="/sprite.svg#parenthesis_right"></use>
+          </svg>
+        </span>
       </div>
 
-      <div class="container bottom-formulas-wrapper">
-        <div class="bottom-formula-left">
-          <span class="equals-sign">
-            <svg width="15" height="5" class="equals-icon">
-              <use href="/sprite.svg#equals_1"></use>
-            </svg>
-            <svg width="15" height="5" class="equals-icon">
-              <use href="/sprite.svg#equals_2"></use>
-            </svg>
-          </span>
-          <span class="parenthesis">
-            <svg width="9" height="37" class="parenthesis-icon">
-              <use href="/sprite.svg#parenthesis_left"></use>
-            </svg>
-          </span>
-          <span>A2*B2</span>
-          <span class="parenthesis">
-            <svg width="9" height="37" class="parenthesis-icon">
-              <use href="/sprite.svg#parenthesis_right"></use>
-            </svg>
-          </span>
-        </div>
+      <div class="bottom-formula-center">AVERAGE(B2+D2)</div>
 
-        <div class="bottom-formula-center">AVERAGE(B2+D2)</div>
-
-        <div class="bottom-formula-right">SUM(A1+B4)</div>
-      </div>
+      <div class="bottom-formula-right">SUM(A1+B4)</div>
     </div>
 
     <script type="module" src="/src/main.js"></script>
