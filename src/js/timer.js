@@ -3,60 +3,62 @@ export const initCountdown = (options = {}) => {
     options.targetDate || 'May 10, 2025 19:30:00'
   ).getTime();
 
+  let days = '00';
+  let hours = '00';
+  let minutes = '00';
+  let seconds = '00';
+
+  const updateDigits = (type, value) => {
+    if (value === eval(type)) return;
+
+    eval(`${type} = value`);
+
+    document.querySelectorAll(`.timer-digits.${type}`).forEach(element => {
+      if (element.textContent !== value) {
+        element.textContent = value;
+      }
+    });
+  };
+
   const updateTimer = () => {
     const now = new Date().getTime();
     const distance = targetDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    updateTimerElement('days', days);
-    updateTimerElement('hours', hours);
-    updateTimerElement('minutes', minutes);
-    updateTimerElement('seconds', seconds);
-
-    updateTimerElement('mobile-days', days);
-    updateTimerElement('mobile-hours', hours);
-    updateTimerElement('mobile-minutes', minutes);
-    updateTimerElement('mobile-seconds', seconds);
-
-    updateTimerElement('modal-days', days);
-    updateTimerElement('modal-hours', hours);
-    updateTimerElement('modal-minutes', minutes);
-    updateTimerElement('modal-seconds', seconds);
-
-    if (distance < 0) {
-      updateTimerElement('days', 0);
-      updateTimerElement('hours', 0);
-      updateTimerElement('minutes', 0);
-      updateTimerElement('seconds', 0);
-
-      updateTimerElement('mobile-days', 0);
-      updateTimerElement('mobile-hours', 0);
-      updateTimerElement('mobile-minutes', 0);
-      updateTimerElement('mobile-seconds', 0);
-
-      updateTimerElement('modal-days', 0);
-      updateTimerElement('modal-hours', 0);
-      updateTimerElement('modal-minutes', 0);
-      updateTimerElement('modal-seconds', 0);
-
+    if (distance <= 0) {
+      updateDigits('days', '00');
+      updateDigits('hours', '00');
+      updateDigits('minutes', '00');
+      updateDigits('seconds', '00');
       clearInterval(timerInterval);
+      return;
     }
-  };
 
-  const updateTimerElement = (elementId, value) => {
-    const element = document.getElementById(elementId);
-    if (element) {
-      element.textContent = value.toString().padStart(2, '0');
-    }
+    const daysValue = Math.floor(distance / (1000 * 60 * 60 * 24))
+      .toString()
+      .padStart(2, '0');
+
+    const hoursValue = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    )
+      .toString()
+      .padStart(2, '0');
+
+    const minutesValue = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      .toString()
+      .padStart(2, '0');
+
+    const secondsValue = Math.floor((distance % (1000 * 60)) / 1000)
+      .toString()
+      .padStart(2, '0');
+
+    updateDigits('days', daysValue);
+    updateDigits('hours', hoursValue);
+    updateDigits('minutes', minutesValue);
+    updateDigits('seconds', secondsValue);
   };
 
   updateTimer();
+
   const timerInterval = setInterval(updateTimer, 1000);
 
   return () => clearInterval(timerInterval);
