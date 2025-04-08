@@ -1,9 +1,7 @@
 .timer-container {
   margin-top: 24px;
-}
 
-@media screen and (min-width: 768px) {
-  .timer-container {
+  @media screen and (min-width: 1200px) {
     margin-top: 36px;
   }
 }
@@ -26,15 +24,13 @@
   font-size: 28px;
   font-weight: 700;
   line-height: 1.3;
-}
 
-@media screen and (min-width: 1200px) {
-  .timer-digits {
+  @media screen and (min-width: 1200px) {
     font-size: 32px;
   }
 }
 
-.timer-seconds {
+.timer-digits.seconds {
   color: var(--color-primary);
 }
 

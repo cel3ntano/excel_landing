@@ -29,8 +29,29 @@ const handleFormSubmit = async event => {
   }
 };
 
+const handleFieldInput = event => {
+  const field = event.target;
+  const fieldContainer = field.closest('.form-field');
+
+  if (fieldContainer) {
+    fieldContainer.classList.remove('error');
+
+    const errorId = `${field.id}-error`;
+    const errorElement = document.getElementById(errorId);
+    if (errorElement) {
+      errorElement.textContent = '';
+    }
+  }
+};
+
 export const setupForm = form => {
   if (!form) return;
+
+  const newForm = form.cloneNode(true);
+  if (form.parentNode) {
+    form.parentNode.replaceChild(newForm, form);
+  }
+  form = newForm;
 
   form.addEventListener('submit', handleFormSubmit);
 
@@ -38,6 +59,17 @@ export const setupForm = form => {
   if (phoneInput) {
     formatPhoneNumber(phoneInput);
   }
+
+  const formInputs = form.querySelectorAll('input');
+  formInputs.forEach(input => {
+    input.addEventListener('input', handleFieldInput);
+
+    if (input.type === 'checkbox') {
+      input.addEventListener('change', handleFieldInput);
+    }
+  });
+
+  return form;
 };
 
 export default setupForm;
